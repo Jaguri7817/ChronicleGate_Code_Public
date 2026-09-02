@@ -33,35 +33,36 @@ Dedicated Server 구조, Stage 기반 레벨 스트리밍, 전투 시스템, 최
 ## 코드 가이드
 
 ### Dedicated Server + Client 구조
-- `Source/ChronicleGateClient.Target.cs`
-- `Source/ChronicleGateServer.Target.cs`
-- `Source/ChronicleGateEditor.Target.cs`
+- [ChronicleGateClient.Target.cs](https://github.com/Jaguri7817/ChronicleGate_Code_Public/blob/main/Source/ChronicleGateClient.Target.cs)
+- [ChronicleGateServer.Target.cs](https://github.com/Jaguri7817/ChronicleGate_Code_Public/blob/main/Source/ChronicleGateServer.Target.cs)
+- [ChronicleGateEditor.Target.cs](https://github.com/Jaguri7817/ChronicleGate_Code_Public/blob/main/Source/ChronicleGateEditor.Target.cs)
 
 Editor / Client / Dedicated Server 타겟을 분리해 프로젝트의 실행 구조를 구성한 파일입니다.
 
 ### Stage 기반 레벨 스트리밍
-- `Source/ChronicleGate/Game/CGStageStreamerSystem.cpp`
+- [스테이지 스트리머](https://github.com/Jaguri7817/ChronicleGate_Code_Public/blob/main/Source/ChronicleGate/Game/CGStageStreamerSystem.cpp)
 
 다음 스테이지 선택, 비동기 로드, 텔레포트, 이전 스테이지 언로드까지의 전체 전환 흐름을 담당합니다.
 
 ### 전투 및 공격 판정
-- `Source/ChronicleGate/Character/CGCharacterPlayer.cpp`
+- [공격 및 전투 판정](https://github.com/Jaguri7817/ChronicleGate_Code_Public/blob/main/Source/ChronicleGate/Character/CGCharacterPlayer.cpp#L508)
 
 서버 권위 기반 공격 처리, 히트 판정, 데미지 적용 요청 흐름의 핵심 로직을 확인할 수 있습니다.
 
 ### 스탯/HP 동기화
-- `Source/ChronicleGate/Character/CGStatComponent.*`
-- `Source/ChronicleGate/Character/CGStatData.h`
+- [스탯 컴포넌트 헤더](https://github.com/Jaguri7817/ChronicleGate_Code_Public/blob/main/Source/ChronicleGate/Character/CGStatComponent.h)
+  [스탯 컴포넌트 구현부](https://github.com/Jaguri7817/ChronicleGate_Code_Public/blob/main/Source/ChronicleGate/Character/CGStatComponent.cpp)
+- [스탯 데이터](https://github.com/Jaguri7817/ChronicleGate_Code_Public/blob/main/Source/ChronicleGate/Character/CGStatData.h)
 
 캐릭터의 HP 및 기본 스탯 관리, 상태 변경 전파, UI 반영과 연결되는 중심 로직과 스탯 데이터의 직렬화(NetSerialize) 구조를 담고 있습니다.
 
 ### Web3/NFT 연동
-- `Source/ChronicleGate/BlockChain/CGBackendSubsystem.cpp`
+- [블록체인 백엔드 서브시스템](https://github.com/Jaguri7817/ChronicleGate_Code_Public/blob/main/Source/ChronicleGate/BlockChain/CGBackendSubsystem.cpp)
 
 백엔드 API 통신을 통해 보상 조회, NFT 관련 데이터 수신, 게임 로직과의 연결을 담당합니다.
 
 ### NFT 스킨 인터페이스
-- `Source/ChronicleGate/Equipment/CGCharacterSkinComponent.cpp`
+- [캐릭터 스킨 컴포넌트](https://github.com/Jaguri7817/ChronicleGate_Code_Public/blob/main/Source/ChronicleGate/Equipment/CGCharacterSkinComponent.cpp)
 
 외부에서 전달된 NFT 스킨 데이터를 게임 내 캐릭터 스킨 선택 및 적용 흐름과 연결하는 핵심 파일입니다.
 
